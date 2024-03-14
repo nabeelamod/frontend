@@ -1,0 +1,36 @@
+<p>Enter Tags (in a comma separated list or just single):</p>
+<input #txtTags value="tech">
+<br>
+<p>Enter Field to Sort By:</p>
+<input #txtField value="id">
+<br>
+<p>Enter direction:</p>
+<input #txtSort value="asc">
+<br><br>
+<button (click)="searchTags(txtTags,txtField,txtSort)">Search Tags</button>
+<p>{{urlSearchTag}}</p>
+<p><font color="Red">{{errorMsg}}</font></p>
+<table>
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>ID</th>
+            <th>AuthorID</th>
+            <th>Likes</th>
+            <th>Popularity</th>
+            <th>Reads</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts">
+            <td> {{ post.author }}</td>
+            <td> {{ post.id }}</td>
+            <td> {{ post.authorId }}</td>
+            <td> {{ post.likes }}</td>
+            <td> {{ post.popularity }}</td>
+            <td> {{ post.reads }}</td>
+            <td> {{ post.tags }}</td>
+        </tr> 
+    </tbody>
+</table>
